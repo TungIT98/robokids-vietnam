@@ -1,0 +1,159 @@
+name: Performance Gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  NODE_VERSION: '20'
+  # Performance thresholds
+  MAX_INDEX_BUNDLE_KB: 600
+  MAX_VENDOR_THREE_KB: 1100
+  MAX_VENDOR_BLOCKLY_KB: 750
+  MAX_ANY_CHUNK_KB: 100
+  LIGHTHOUSE_MIN_SCORE: 90
+
+jobs:
+  build:
+    name: Build & Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
+
+  bundle-size:
+    name: Bundle Size Check
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Analyze bundle sizes
+        run: |
+          echo "=== Bundle Size Analysis ==="
+
+          # Check index.js
+          INDEX_SIZE=$(stat -c%s dist/assets/index-*.js 2>/dev/null || echo "0")
+          INDEX_SIZE_KB=$((INDEX_SIZE / 1024))
+          echo "index.js: ${INDEX_SIZE_KB} KB (max: ${{ env.MAX_INDEX_BUNDLE_KB }} KB)"
+
+          if [ $INDEX_SIZE_KB -gt ${{ env.MAX_INDEX_BUNDLE_KB }} ]; then
+            echo "❌ FAIL: index.js exceeds size limit"
+            exit 1
+          fi
+
+          # Check vendor-three.js
+          THREE_SIZE=$(stat -c%s dist/assets/vendor-three-*.js 2>/dev/null || echo "0")
+          THREE_SIZE_KB=$((THREE_SIZE / 1024))
+          echo "vendor-three.js: ${THREE_SIZE_KB} KB (max: ${{ env.MAX_VENDOR_THREE_KB }} KB)"
+
+          if [ $THREE_SIZE_KB -gt ${{ env.MAX_VENDOR_THREE_KB }} ]; then
+            echo "❌ FAIL: vendor-three.js exceeds size limit"
+            exit 1
+          fi
+
+          # Check vendor-blockly.js
+          BLOCKLY_SIZE=$(stat -c%s dist/assets/vendor-blockly-*.js 2>/dev/null || echo "0")
+          BLOCKLY_SIZE_KB=$((BLOCKLY_SIZE / 1024))
+          echo "vendor-blockly.js: ${BLOCKLY_SIZE_KB} KB (max: ${{ env.MAX_VENDOR_BLOCKLY_KB }} KB)"
+
+          if [ $BLOCKLY_SIZE_KB -gt ${{ env.MAX_VENDOR_BLOCKLY_KB }} ]; then
+            echo "❌ FAIL: vendor-blockly.js exceeds size limit"
+            exit 1
+          fi
+
+          # Check for any chunk over limit
+          echo ""
+          echo "=== Checking for oversized chunks ==="
+          for file in dist/assets/*.js; do
+            if [ -f "$file" ]; then
+              SIZE=$(stat -c%s "$file")
+              SIZE_KB=$((SIZE / 1024))
+              NAME=$(basename "$file")
+              if [ $SIZE_KB -gt ${{ env.MAX_ANY_CHUNK_KB }} ] && [[ ! "$NAME" =~ vendor-(three|blockly|react|chakra|ui) ]]; then
+                echo "⚠️  Warning: $NAME is ${SIZE_KB} KB"
+              fi
+            fi
+          done
+
+          echo ""
+          echo "✅ Bundle sizes within limits"
+
+      - name: Upload bundle report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-report
+          path: dist/stats.html
+          retention-days: 30
+
+  lighthouse:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          configPath: './lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true

@@ -1,0 +1,17 @@
+# Cloudflare Worker: Enrollment API
+# Deploy with: wrangler deploy workers/enrollment-worker.ts
+
+name = "robokids-enrollment"
+main = "workers/enrollment-worker.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://robokids.vn,https://www.robokids.vn,https://robokids-platform.pages.dev"
+
+# Secrets (set via: wrangler secret put SUPABASE_URL)
+# SUPABASE_URL = "https://uciwcnjdomvahtbcvfyg.supabase.co"
+# SUPABASE_ANON_KEY = "your-anon-key"
+# SUPABASE_SERVICE_ROLE_KEY = "your-service-role-key"
+
+[env.production]
+name = "robokids-enrollment"

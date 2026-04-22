@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <!-- RoboKids Vietnam Logo - Primary -->
+  <defs>
+    <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3"/>
+      <stop offset="100%" style="stop-color:#1976D2"/>
+    </linearGradient>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800"/>
+      <stop offset="100%" style="stop-color:#F57C00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Robot Head -->
+  <rect x="10" y="25" width="60" height="50" rx="12" fill="url(#robotGradient)"/>
+
+  <!-- Robot Eyes -->
+  <circle cx="30" cy="45" r="8" fill="#FFFFFF"/>
+  <circle cx="50" cy="45" r="8" fill="#FFFFFF"/>
+  <circle cx="32" cy="46" r="4" fill="#0D47A1"/>
+  <circle cx="52" cy="46" r="4" fill="#0D47A1"/>
+
+  <!-- Robot Smile -->
+  <path d="M 28 58 Q 40 68 52 58" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Robot Antenna -->
+  <line x1="40" y1="25" x2="40" y2="12" stroke="#4CAF50" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="40" cy="10" r="5" fill="#FFEB3B"/>
+
+  <!-- Robot Ears -->
+  <rect x="2" y="35" width="8" height="20" rx="3" fill="#4CAF50"/>
+  <rect x="70" y="35" width="8" height="20" rx="3" fill="#4CAF50"/>
+
+  <!-- Circuit Lines on Head -->
+  <line x1="15" y1="35" x2="25" y2="35" stroke="#90CAF9" stroke-width="2" stroke-linecap="round"/>
+  <line x1="15" y1="42" x2="22" y2="42" stroke="#90CAF9" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Robot Body -->
+  <rect x="15" y="78" width="50" height="35" rx="8" fill="url(#bodyGradient)"/>
+
+  <!-- Body Panel -->
+  <rect x="22" y="84" width="36" height="22" rx="4" fill="#0D47A1"/>
+  <circle cx="30" cy="90" r="3" fill="#FFEB3B"/>
+  <circle cx="40" cy="90" r="3" fill="#4CAF50"/>
+  <circle cx="50" cy="90" r="3" fill="#F44336"/>
+
+  <!-- Body Buttons -->
+  <rect x="28" y="96" width="8" height="6" rx="2" fill="#FFFFFF"/>
+  <rect x="40" y="96" width="8" height="6" rx="2" fill="#FFFFFF"/>
+
+  <!-- Robot Legs -->
+  <rect x="22" y="113" width="12" height="6" rx="2" fill="#0D47A1"/>
+  <rect x="46" y="113" width="12" height="6" rx="2" fill="#0D47A1"/>
+
+  <!-- Wordmark: RoboKids -->
+  <text x="95" y="52" font-family="Nunito, Inter, system-ui, sans-serif" font-size="36" font-weight="700" fill="#1976D2">RoboKids</text>
+
+  <!-- Vietnam Text -->
+  <text x="95" y="75" font-family="Nunito, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#FF9800">VIETNAM</text>
+
+  <!-- Tagline -->
+  <text x="95" y="95" font-family="Nunito, Inter, system-ui, sans-serif" font-size="11" font-weight="400" fill="#616161">Trẻ em Việt Nam học lập trình robot từ 6 tuổi</text>
+
+  <!-- Star accent -->
+  <polygon points="370,35 373,43 382,43 375,49 378,58 370,53 362,58 365,49 358,43 367,43" fill="#FFEB3B"/>
+</svg>

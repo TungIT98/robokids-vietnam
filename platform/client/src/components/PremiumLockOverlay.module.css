@@ -1,0 +1,256 @@
+/**
+ * PremiumLockOverlay Styles
+ */
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  opacity: 0.3;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  padding: 20px;
+}
+
+.lockCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 2px solid #fef3c7;
+}
+
+.lockIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 12px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.description strong {
+  color: #d97706;
+}
+
+.tierComparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tierCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  min-width: 100px;
+}
+
+.tierCard.current {
+  border-color: #667eea;
+  background: #eef2ff;
+}
+
+.tierCard.upgrade {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.tierEmoji {
+  font-size: 32px;
+}
+
+.tierName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.tierLabel {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.tierArrow {
+  font-size: 24px;
+  color: #94a3b8;
+}
+
+.benefitsList {
+  text-align: left;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.benefitsList h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 12px 0;
+}
+
+.benefitsList ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefitsList li {
+  font-size: 13px;
+  color: #065f46;
+  padding: 6px 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upgradeBtn {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.upgradeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+.learnMoreBtn {
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.learnMoreBtn:hover {
+  text-decoration: underline;
+}
+
+/* Premium Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.small {
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+.badge.medium {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.badge.large {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+.badgePaid {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+/* Tier Indicator */
+.tierIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tierIndicatorEmoji {
+  font-size: 24px;
+}
+
+.tierIndicatorText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tierIndicatorName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.tierIndicatorExpiry {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .lockCard {
+    padding: 24px 16px;
+  }
+
+  .tierComparison {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tierArrow {
+    transform: rotate(90deg);
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}

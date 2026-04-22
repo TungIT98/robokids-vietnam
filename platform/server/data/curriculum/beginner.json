@@ -1,0 +1,334 @@
+{
+  "titleVi": "Lớp Khởi Đầu",
+  "titleEn": "Beginner Robotics",
+  "descriptionVi": "Khóa học robotics cho trẻ 6-8 tuổi, tập trung vào các khối lệnh cơ bản: bắt đầu, di chuyển, rẽ, chờ đợi và LED.",
+  "descriptionEn": "Introductory robotics course for ages 6-8, focusing on basic blocks: start, move, turn, wait, and LED.",
+  "totalLessons": 20,
+  "totalHours": 40,
+  "minAge": 6,
+  "maxAge": 8,
+  "blocks": [
+    {
+      "id": "beginner_start",
+      "nameVi": "KHI BẮT ĐẦU",
+      "nameEn": "WHEN START",
+      "color": "#4CAF50",
+      "category": "events",
+      "descriptionVi": "Khối sự kiện bắt đầu chương trình",
+      "descriptionEn": "Event block that starts the program"
+    },
+    {
+      "id": "beginner_forward",
+      "nameVi": "TIẾN TỚI",
+      "nameEn": "MOVE FORWARD",
+      "color": "#2196F3",
+      "category": "motion",
+      "descriptionVi": "Di chuyển robot tiến về phía trước",
+      "descriptionEn": "Move robot forward"
+    },
+    {
+      "id": "beginner_backward",
+      "nameVi": "LÙI LẠI",
+      "nameEn": "MOVE BACKWARD",
+      "color": "#2196F3",
+      "category": "motion",
+      "descriptionVi": "Di chuyển robot lùi về phía sau",
+      "descriptionEn": "Move robot backward"
+    },
+    {
+      "id": "beginner_turn_left",
+      "nameVi": "RẼ TRÁI",
+      "nameEn": "TURN LEFT",
+      "color": "#2196F3",
+      "category": "motion",
+      "descriptionVi": "Quay robot sang trái 90 độ",
+      "descriptionEn": "Turn robot left 90 degrees"
+    },
+    {
+      "id": "beginner_turn_right",
+      "nameVi": "RẼ PHẢI",
+      "nameEn": "TURN RIGHT",
+      "color": "#2196F3",
+      "category": "motion",
+      "descriptionVi": "Quay robot sang phải 90 độ",
+      "descriptionEn": "Turn robot right 90 degrees"
+    },
+    {
+      "id": "beginner_wait",
+      "nameVi": "CHỜ",
+      "nameEn": "WAIT",
+      "color": "#FF9800",
+      "category": "control",
+      "descriptionVi": "Dừng robot trong một khoảng thời gian",
+      "descriptionEn": "Wait for a duration"
+    },
+    {
+      "id": "beginner_led",
+      "nameVi": "BẬT ĐÈN LED",
+      "nameEn": "LED ON",
+      "color": "#9C27B0",
+      "category": "output",
+      "descriptionVi": "Bật đèn LED trên robot",
+      "descriptionEn": "Turn on LED on robot"
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "chao-robot",
+      "number": 1,
+      "titleVi": "Chào Robot!",
+      "titleEn": "Hello Robot!",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu robot là gì, biết cách ra lệnh cho robot, làm quen với giao diện kéo-thả",
+      "objectiveEn": "Children understand what a robot is, how to give commands, and get familiar with drag-drop interface",
+      "activities": [
+        {
+          "nameVi": "Giới thiệu",
+          "nameEn": "Introduction",
+          "durationMinutes": 10,
+          "type": "discussion"
+        },
+        {
+          "nameVi": "Lý thuyết đơn giản",
+          "nameEn": "Simple Theory",
+          "durationMinutes": 5,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 20,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start"],
+      "vocabulary": [
+        { "term": "Robot", "definitionVi": "Máy móc thông minh", "definitionEn": "Smart machine" },
+        { "term": "Lệnh", "definitionVi": "Yêu cầu robot làm gì đó", "definitionEn": "Command to robot" },
+        { "term": "Chương trình", "definitionVi": "Tập hợp các lệnh", "definitionEn": "Program" }
+      ],
+      "challenge": "Kéo khối KHI BẮT ĐẦU vào workspace, nhấn nút chạy để robot chào!"
+    },
+    {
+      "slug": "robot-di-thang",
+      "number": 2,
+      "titleVi": "Robot Đi Thẳng",
+      "titleEn": "Robot Moves Forward",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu khối tiến tới, điều khiển robot đi thẳng, đếm số bước",
+      "objectiveEn": "Children understand move-forward block, control robot to move straight, count steps",
+      "activities": [
+        {
+          "nameVi": "Ôn bài",
+          "nameEn": "Review",
+          "durationMinutes": 5,
+          "type": "discussion"
+        },
+        {
+          "nameVi": "Giảng giải",
+          "nameEn": "Instruction",
+          "durationMinutes": 5,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 25,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_forward"],
+      "vocabulary": [
+        { "term": "Tiến tới", "definitionVi": "Đi về phía trước", "definitionEn": "Move forward" },
+        { "term": "Bước", "definitionVi": "Đơn vị di chuyển", "definitionEn": "Step" }
+      ],
+      "challenge": "Làm robot đi thẳng 5 bước mà không lệch!"
+    },
+    {
+      "slug": "robot-re-trai-re-phai",
+      "number": 3,
+      "titleVi": "Robot Rẽ Trái và Rẽ Phải",
+      "titleEn": "Robot Turns Left and Right",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu khối rẽ trái và rẽ phải, phân biệt hướng trái/phải, quay 90 độ",
+      "objectiveEn": "Children understand turn-left and turn-right blocks, distinguish left/right direction, turn 90 degrees",
+      "activities": [
+        {
+          "nameVi": "Khởi động",
+          "nameEn": "Warm-up",
+          "durationMinutes": 5,
+          "type": "game"
+        },
+        {
+          "nameVi": "Giảng giải",
+          "nameEn": "Instruction",
+          "durationMinutes": 5,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 25,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_forward", "beginner_turn_left", "beginner_turn_right"],
+      "vocabulary": [
+        { "term": "Rẽ", "definitionVi": "Quay sang hướng khác", "definitionEn": "Turn" },
+        { "term": "90 độ", "definitionVi": "Quay một góc vuông", "definitionEn": "90 degrees" }
+      ],
+      "challenge": "Vẽ hình vuông đơn giản với robot!"
+    },
+    {
+      "slug": "robot-lui-lai",
+      "number": 4,
+      "titleVi": "Robot Lùi Lại",
+      "titleEn": "Robot Moves Backward",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu khối lùi lại, kết hợp tiến và lùi, hiểu khái niệm quay về",
+      "objectiveEn": "Children understand backward block, combine forward and backward, understand return concept",
+      "activities": [
+        {
+          "nameVi": "Ôn bài",
+          "nameEn": "Review",
+          "durationMinutes": 5,
+          "type": "discussion"
+        },
+        {
+          "nameVi": "Giảng giải",
+          "nameEn": "Instruction",
+          "durationMinutes": 5,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 25,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_forward", "beginner_backward"],
+      "vocabulary": [
+        { "term": "Lùi lại", "definitionVi": "Đi về phía sau", "definitionEn": "Move backward" }
+      ],
+      "challenge": "Điều khiển robot ra khỏi mê cung đơn giản!"
+    },
+    {
+      "slug": "ghép-lệnh",
+      "number": 5,
+      "titleVi": "Ghép Lệnh Thành Chương Trình",
+      "titleEn": "Sequencing Commands",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu chuỗi lệnh, lập trình vẽ hình đơn giản, tự debug",
+      "objectiveEn": "Children understand command sequence, program to draw simple shapes, self-debug",
+      "activities": [
+        {
+          "nameVi": "Ôn bài",
+          "nameEn": "Review",
+          "durationMinutes": 5,
+          "type": "discussion"
+        },
+        {
+          "nameVi": "Giảng giải",
+          "nameEn": "Instruction",
+          "durationMinutes": 10,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 20,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_forward", "beginner_turn_left", "beginner_turn_right"],
+      "vocabulary": [
+        { "term": "Chuỗi lệnh", "definitionVi": "Các lệnh chạy theo thứ tự", "definitionEn": "Command sequence" },
+        { "term": "Debug", "definitionVi": "Tìm và sửa lỗi", "definitionEn": "Find and fix errors" }
+      ],
+      "challenge": "Tạo chương trình cho robot vẽ một hình mà em thích!"
+    },
+    {
+      "slug": "den-led",
+      "number": 6,
+      "titleVi": "Bật Đèn LED",
+      "titleEn": "LED Light",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu khối LED, kết hợp LED với di chuyển",
+      "objectiveEn": "Children understand LED block, combine LED with movement",
+      "activities": [
+        {
+          "nameVi": "Giới thiệu LED",
+          "nameEn": "LED Introduction",
+          "durationMinutes": 10,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 25,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_forward", "beginner_led"],
+      "vocabulary": [
+        { "term": "LED", "definitionVi": "Đèn chiếu sáng nhỏ", "definitionEn": "Light emitting diode" }
+      ],
+      "challenge": "Làm robot nhấp nháy đèn khi di chuyển!"
+    },
+    {
+      "slug": "cho-doi",
+      "number": 7,
+      "titleVi": "Chờ Đợi",
+      "titleEn": "Wait Block",
+      "durationMinutes": 35,
+      "objectiveVi": "Trẻ hiểu khối chờ, tạo hiệu ứng nhấp nháy",
+      "objectiveEn": "Children understand wait block, create blinking effects",
+      "activities": [
+        {
+          "nameVi": "Giảng giải",
+          "nameEn": "Instruction",
+          "durationMinutes": 10,
+          "type": "lecture"
+        },
+        {
+          "nameVi": "Thực hành",
+          "nameEn": "Practice",
+          "durationMinutes": 25,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_wait", "beginner_led"],
+      "vocabulary": [
+        { "term": "Chờ", "definitionVi": "Dừng trong thời gian nhất định", "definitionEn": "Pause for duration" }
+      ],
+      "challenge": "Tạo hiệu ứng đèn giao thông!"
+    },
+    {
+      "slug": "du-an-cuoi-bai",
+      "number": 8,
+      "titleVi": "Dự Án Cuối Bài - Vẽ Hình",
+      "titleEn": "End of Lesson Project - Draw Shapes",
+      "durationMinutes": 45,
+      "objectiveVi": "Trẻ ôn tập tất cả khối đã học, tự tạo dự án",
+      "objectiveEn": "Children review all learned blocks, create own project",
+      "activities": [
+        {
+          "nameVi": "Ôn tập",
+          "nameEn": "Review",
+          "durationMinutes": 10,
+          "type": "discussion"
+        },
+        {
+          "nameVi": "Dự án tự do",
+          "nameEn": "Free project",
+          "durationMinutes": 35,
+          "type": "hands_on"
+        }
+      ],
+      "blocks": ["beginner_start", "beginner_forward", "beginner_backward", "beginner_turn_left", "beginner_turn_right", "beginner_wait", "beginner_led"],
+      "vocabulary": [],
+      "challenge": "Tạo chương trình vẽ hình yêu thích và trình bày cho cả lớp!"
+    }
+  ]
+}

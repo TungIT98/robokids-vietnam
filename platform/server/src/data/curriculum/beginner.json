@@ -1,0 +1,253 @@
+{
+  "ageGroup": "beginner",
+  "titleVi": "Chương trình dành cho trẻ 6-8 tuổi",
+  "titleEn": "Curriculum for ages 6-8",
+  "descriptionVi": "Học cách điều khiển robot cơ bản - di chuyển, rẽ, bật đèn",
+  "descriptionEn": "Learn basic robot control - movement, turning, LED control",
+  "totalLessons": 5,
+  "totalHours": 2.5,
+  "minAge": 6,
+  "maxAge": 8,
+  "blockConfig": {
+    "availableBlocks": [
+      "robot_move_forward",
+      "robot_move_backward",
+      "robot_turn_left",
+      "robot_turn_right",
+      "robot_wait",
+      "robot_led_on",
+      "robot_led_off"
+    ],
+    "disabledBlocks": [],
+    "blockLabelsVi": {
+      "robot_move_forward": "Đi tới",
+      "robot_move_backward": "Đi lùi",
+      "robot_turn_left": "Rẽ trái",
+      "robot_turn_right": "Rẽ phải",
+      "robot_wait": "Chờ",
+      "robot_led_on": "Bật đèn",
+      "robot_led_off": "Tắt đèn"
+    },
+    "showCodePreview": false,
+    "maxLoopDepth": 1
+  },
+  "lessons": [
+    {
+      "id": "beginner-01",
+      "slug": "hello-robot",
+      "title": "Xin chào Robot!",
+      "titleVi": "Xin chào Robot!",
+      "titleEn": "Hello Robot!",
+      "descriptionVi": "Bài học đầu tiên - làm quen với robot và các lệnh di chuyển cơ bản",
+      "descriptionEn": "First lesson - getting started with robot and basic movement commands",
+      "ageGroup": "beginner",
+      "category": "movement",
+      "difficulty": "basic",
+      "estimatedMinutes": 15,
+      "objectives": ["Hiểu cách robot di chuyển tới", "Sử dụng khối move_forward"],
+      "objectivesVi": ["Hiểu cách robot di chuyển tới", "Sử dụng khối move_forward"],
+      "steps": [
+        {
+          "id": "step-1-1",
+          "order": 1,
+          "title": "Bật đèn robot",
+          "descriptionVi": "Trước tiên, hãy bật đèn robot để Robot thức dậy!",
+          "allowedBlocks": ["robot_led_on"],
+          "labelVi": "Bật đèn",
+          "labelEn": "Turn on LED",
+          "hint": "Tìm khối 'Bật đèn' trong danh mục Robot và kéo nó vào workspace"
+        },
+        {
+          "id": "step-1-2",
+          "order": 2,
+          "title": "Di chuyển tới",
+          "descriptionVi": "Bây giờ hãy làm robot di chuyển tới với tốc độ 10 bước!",
+          "allowedBlocks": ["robot_move_forward"],
+          "labelVi": "Di chuyển tới",
+          "labelEn": "Move forward",
+          "hint": "Kéo khối 'Di chuyển tới' và nối với khối bật đèn"
+        },
+        {
+          "id": "step-1-3",
+          "order": 3,
+          "title": "Chờ một chút",
+          "descriptionVi": "Robot cần nghỉ ngơi! Thêm khối chờ 2 giây.",
+          "allowedBlocks": ["robot_wait"],
+          "labelVi": "Chờ",
+          "labelEn": "Wait",
+          "hint": "Khối chờ giúp robot dừng lại trước khi làm gì tiếp theo"
+        }
+      ],
+      "starterXml": "<xml><block type=\"robot_led_on\" x=\"100\" y=\"50\"></block></xml>",
+      "availableBlocks": ["robot_led_on", "robot_move_forward", "robot_wait", "robot_led_off"],
+      "nextLessonSlug": "robot-dance",
+      "tags": ["basics", "movement", "first-steps"],
+      "version": 1,
+      "author": "Content Creator",
+      "contentRating": 4
+    },
+    {
+      "id": "beginner-02",
+      "slug": "robot-dance",
+      "title": "Điệu nhảy Robot",
+      "titleVi": "Điệu nhảy Robot",
+      "titleEn": "Robot Dance",
+      "descriptionVi": "Học cách tạo chuỗi lệnh liên tiếp để robot nhảy theo nhịp",
+      "descriptionEn": "Learn to create sequential command chains for robot dance routines",
+      "ageGroup": "beginner",
+      "category": "movement",
+      "difficulty": "basic",
+      "estimatedMinutes": 20,
+      "objectives": ["Tạo chuỗi lệnh liên tiếp", "Hiểu thứ tự thực hiện"],
+      "objectivesVi": ["Tạo chuỗi lệnh liên tiếp", "Hiểu thứ tự thực hiện"],
+      "steps": [
+        {
+          "id": "step-2-1",
+          "order": 1,
+          "title": "Di chuyển tới",
+          "descriptionVi": "Robot nhảy bước đầu tiên - di chuyển tới!",
+          "allowedBlocks": ["robot_move_forward"],
+          "labelVi": "Bước 1",
+          "labelEn": "Step 1"
+        },
+        {
+          "id": "step-2-2",
+          "order": 2,
+          "title": "Rẽ trái",
+          "descriptionVi": "Bước 2 - rẽ trái 90 độ!",
+          "allowedBlocks": ["robot_turn_left"],
+          "labelVi": "Bước 2",
+          "labelEn": "Step 2"
+        }
+      ],
+      "availableBlocks": ["robot_led_on", "robot_move_forward", "robot_turn_left", "robot_turn_right", "robot_wait", "robot_led_off"],
+      "nextLessonSlug": "light-show",
+      "tags": ["movement", "dance", "sequences"],
+      "version": 1,
+      "author": "Content Creator",
+      "contentRating": 4
+    },
+    {
+      "id": "beginner-03",
+      "slug": "light-show",
+      "title": "Sân khấu đèn LED",
+      "titleVi": "Sân khấu đèn LED",
+      "titleEn": "LED Light Show",
+      "descriptionVi": "Điều khiển đèn LED của robot để tạo hiệu ứng ánh sáng",
+      "descriptionEn": "Control robot LED lights to create light effects",
+      "ageGroup": "beginner",
+      "category": "creativity",
+      "difficulty": "basic",
+      "estimatedMinutes": 15,
+      "objectives": ["Bật/tắt đèn LED", "Tạo hiệu ứng ánh sáng"],
+      "objectivesVi": ["Bật/tắt đèn LED", "Tạo hiệu ứng ánh sáng"],
+      "steps": [
+        {
+          "id": "step-3-1",
+          "order": 1,
+          "title": "Bật đèn đỏ",
+          "descriptionVi": "Bật đèn màu đỏ trên robot!",
+          "allowedBlocks": ["robot_led_on"],
+          "labelVi": "Đèn đỏ",
+          "labelEn": "Red LED"
+        },
+        {
+          "id": "step-3-2",
+          "order": 2,
+          "title": "Chờ và tắt đèn",
+          "descriptionVi": "Chờ 1 giây rồi tắt đèn.",
+          "allowedBlocks": ["robot_wait", "robot_led_off"],
+          "labelVi": "Tắt đèn",
+          "labelEn": "Turn off LED"
+        }
+      ],
+      "availableBlocks": ["robot_led_on", "robot_led_off", "robot_wait"],
+      "nextLessonSlug": "maze-runner",
+      "tags": ["creativity", "led", "lights"],
+      "version": 1,
+      "author": "Content Creator",
+      "contentRating": 3
+    },
+    {
+      "id": "beginner-04",
+      "slug": "maze-runner",
+      "title": "Robot vượt mê cung",
+      "titleVi": "Robot vượt mê cung",
+      "titleEn": "Maze Runner",
+      "descriptionVi": "Điều khiển robot di chuyển qua một mê cung đơn giản",
+      "descriptionEn": "Navigate a robot through a simple maze",
+      "ageGroup": "beginner",
+      "category": "challenges",
+      "difficulty": "basic",
+      "estimatedMinutes": 25,
+      "objectives": ["Sử dụng tổ hợp di chuyển và rẽ", "Giải quyết vấn đề cơ bản"],
+      "objectivesVi": ["Sử dụng tổ hợp di chuyển và rẽ", "Giải quyết vấn đề cơ bản"],
+      "steps": [
+        {
+          "id": "step-4-1",
+          "order": 1,
+          "title": "Đi tới điểm A",
+          "descriptionVi": "Di chuyển robot tới điểm đầu tiên của mê cung",
+          "allowedBlocks": ["robot_move_forward"],
+          "labelVi": "Điểm A",
+          "labelEn": "Point A"
+        },
+        {
+          "id": "step-4-2",
+          "order": 2,
+          "title": "Rẽ phải",
+          "descriptionVi": "Rẽ phải 90 độ để đi vào hành lang",
+          "allowedBlocks": ["robot_turn_right"],
+          "labelVi": "Hành lang",
+          "labelEn": "Hallway"
+        }
+      ],
+      "availableBlocks": ["robot_move_forward", "robot_turn_left", "robot_turn_right", "robot_wait"],
+      "nextLessonSlug": "follow-line",
+      "tags": ["challenges", "maze", "navigation"],
+      "version": 1,
+      "author": "Content Creator",
+      "contentRating": 4
+    },
+    {
+      "id": "beginner-05",
+      "slug": "follow-line",
+      "title": "Robot đi theo đường",
+      "titleVi": "Robot đi theo đường",
+      "titleEn": "Follow the Line",
+      "descriptionVi": "Sử dụng cảm biến để robot di chuyển theo đường vẽ",
+      "descriptionEn": "Use sensors to make robot follow a drawn path",
+      "ageGroup": "beginner",
+      "category": "sensors",
+      "difficulty": "intermediate",
+      "estimatedMinutes": 30,
+      "objectives": ["Sử dụng vòng lặp cơ bản", "Đọc dữ liệu cảm biến"],
+      "objectivesVi": ["Sử dụng vòng lặp cơ bản", "Đọc dữ liệu cảm biến"],
+      "steps": [
+        {
+          "id": "step-5-1",
+          "order": 1,
+          "title": "Bật cảm biến",
+          "descriptionVi": "Kích hoạt cảm biến dò đường",
+          "allowedBlocks": ["robot_sensor_start"],
+          "labelVi": "Bật cảm biến",
+          "labelEn": "Start sensor"
+        },
+        {
+          "id": "step-5-2",
+          "order": 2,
+          "title": "Di chuyển theo đường",
+          "descriptionVi": "Robot đọc cảm biến và điều chỉnh hướng để giữ trên đường",
+          "allowedBlocks": ["robot_move_forward", "robot_turn_left", "robot_turn_right"],
+          "labelVi": "Theo đường",
+          "labelEn": "Follow line"
+        }
+      ],
+      "availableBlocks": ["robot_sensor_start", "robot_move_forward", "robot_turn_left", "robot_turn_right", "robot_wait"],
+      "tags": ["sensors", "line-following", "advanced-beginner"],
+      "version": 1,
+      "author": "Content Creator",
+      "contentRating": 4
+    }
+  ]
+}

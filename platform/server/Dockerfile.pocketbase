@@ -1,0 +1,28 @@
+# PocketBase Dockerfile for Railway deployment
+FROM alpine:3.19
+
+# Install curl for health checks and unzip
+RUN apk add --no-cache curl unzip
+
+# Create app directory
+WORKDIR /app
+
+# Download latest PocketBase binary (v0.22.x)
+RUN curl -sL https://github.com/pocketbase/pocketbase/releases/download/v0.22.7/pocketbase_0.22.7_linux_amd64.zip -o /tmp/pb.zip && \
+    unzip /tmp/pb.zip pocketbase && \
+    mv pocketbase /app/pocketbase && \
+    rm /tmp/pb.zip
+
+# Copy migrations and data directories
+COPY pb_migrations /app/pb_migrations
+COPY pb_data /app/pb_data
+
+# Expose port
+EXPOSE 8090
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:8090/api/health || exit 1
+
+# Start PocketBase
+CMD ["/app/pocketbase", "serve", "--http=0.0.0.0:8090"]

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="description" content="RoboKids Vietnam - STEM Robotics Education Platform for Vietnamese children ages 6-16. Learn programming robots with Blockly, AI tutor, and interactive 3D simulation." />
+    <meta name="keywords" content="STEM education, robotics, programming for kids, Blockly, Vietnam, học lập trình, robot cho trẻ em, RoboKids, Space Academy" />
+    <meta name="author" content="RoboKids Vietnam" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://robokids.vn/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font loading: use display=swap to prevent FOIT -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    </noscript>
+
+    <!-- Preload critical JS chunk for faster TTI -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+
+    <!-- DNS prefetch for API -->
+    <link rel="dns-prefetch" href="//127.0.0.1" />
+
+    <title>RoboKids IDE - Lập trình Robot</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://robokids.vn/" />
+    <meta property="og:title" content="RoboKids Vietnam - STEM Robotics Education" />
+    <meta property="og:description" content="Học lập trình robot từ 6 tuổi với RoboKids. Nền tảng giáo dục STEM robotics kết hợp AI tutor thông minh." />
+    <meta property="og:image" content="https://robokids.vn/og-image.png" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="RoboKids Vietnam" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://robokids.vn/" />
+    <meta name="twitter:title" content="RoboKids Vietnam - STEM Robotics Education" />
+    <meta name="twitter:description" content="Học lập trình robot từ 6 tuổi với RoboKids. Nền tảng giáo dục STEM robotics kết hợp AI tutor thông minh." />
+    <meta name="twitter:image" content="https://robokids.vn/og-image.png" />
+
+    <!-- Hreflang for international pages -->
+    <link rel="alternate" hreflang="vi" href="https://robokids.vn/vi/" />
+    <link rel="alternate" hreflang="en" href="https://robokids.vn/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://robokids.vn/" />
+
+    <!-- Structured Data (JSON-LD) for Educational Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "RoboKids Vietnam",
+      "description": "STEM Robotics Education Platform for Vietnamese children ages 6-16",
+      "url": "https://robokids.vn",
+      "logo": "https://robokids.vn/logo.png",
+      "image": "https://robokids.vn/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "VN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["Vietnamese", "English"]
+      },
+      "sameAs": [
+        "https://facebook.com/robokidsvn",
+        "https://youtube.com/@robokidsvn"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Vietnam"
+      },
+      "targetEntity": {
+        "@type": "Audience",
+        "audienceType": "Children ages 6-16"
+      }
+    }
+    </script>
+
+    <style>
+      /* Critical CSS: prevent layout shift on load */
+      body {
+        margin: 0;
+        background-color: #0a0a1a;
+        color: #ffffff;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        /* Reserve space for loading states */
+        min-height: 100vh;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      /* Prevent CLS by reserving space for async content */
+      img, video, iframe {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

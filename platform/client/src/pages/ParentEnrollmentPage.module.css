@@ -1,0 +1,582 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.logo {
+  font-size: 48px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.formCard {
+  max-width: 560px;
+  margin: 0 auto 24px;
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.formHeader {
+  padding: 24px 24px 0;
+  text-align: center;
+}
+
+.formTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.formDesc {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.form {
+  padding: 24px;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.inputError {
+  border-color: #f44336;
+}
+
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.hint {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.errorText {
+  display: block;
+  font-size: 12px;
+  color: #f44336;
+  margin-top: 4px;
+}
+
+.checkboxField {
+  margin-bottom: 12px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.linkText {
+  color: #667eea;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.errorBanner {
+  background-color: #fff3e0;
+  color: #e65100;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.4;
+}
+
+.footer {
+  padding: 24px;
+  text-align: center;
+  color: white;
+}
+
+.footerSmall {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* Success state styles */
+.successCard {
+  max-width: 480px;
+  margin: 48px auto;
+  background-color: white;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.successIcon {
+  font-size: 72px;
+  margin-bottom: 16px;
+}
+
+.successTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.successMessage {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.enrollmentInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f0ff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.enrollmentLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+.enrollmentId {
+  font-size: 14px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.successHint {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #fff3e0;
+  border-radius: 12px;
+}
+
+.successActions {
+  display: flex;
+  justify-content: center;
+}
+
+.successButton {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Schedule Tabs */
+.scheduleTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.scheduleTab {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #667eea;
+  background-color: white;
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.scheduleTab:hover {
+  background-color: #f0f0ff;
+}
+
+.scheduleTabActive {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.scheduleHint {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+/* Time Slot Grid */
+.timeSlotGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeSlotPeriod {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeSlotPeriodLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  padding-left: 4px;
+}
+
+.timeSlotRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+.timeSlotCard {
+  padding: 12px 10px;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeSlotCard:hover:not(.timeSlotCardFull) {
+  border-color: #667eea;
+  background-color: #f8f8ff;
+}
+
+.timeSlotCardSelected {
+  border-color: #667eea;
+  background-color: #f0f0ff;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.timeSlotCardFull {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timeSlotDay {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.timeSlotTime {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.timeSlotAvailability {
+  font-size: 11px;
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.availabilityFull {
+  color: #e74c3c;
+}
+
+/* Summer Camp Grid */
+.summerCampGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.summerCampCard {
+  padding: 16px;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.summerCampCard:hover:not(.summerCampCardFull) {
+  border-color: #f39c12;
+  background-color: #fffbf0;
+}
+
+.summerCampCardSelected {
+  border-color: #f39c12;
+  background-color: #fff8e0;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
+}
+
+.summerCampCardFull {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.summerCampLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.summerCampWeeks {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.summerCampSlots {
+  font-size: 13px;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.slotsFull {
+  color: #e74c3c;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .timeSlotRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summerCampGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduleTabs {
+    flex-direction: column;
+  }
+}
+
+/* Payment Pending State Styles */
+.paymentSection {
+  margin: 24px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f8ff 0%, #fff 100%);
+  border: 2px solid #667eea;
+  border-radius: 16px;
+}
+
+.paymentTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.paymentAmount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: #fff3e0;
+  border-radius: 12px;
+}
+
+.paymentAmountLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+.paymentAmountValue {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e65100;
+}
+
+.paymentLoading {
+  text-align: center;
+  padding: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.paymentReady {
+  text-align: center;
+}
+
+.paymentHint {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.paymentButton {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.paymentButton:hover {
+  transform: scale(1.05);
+}
+
+.qrCodeSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qrCodeSection p {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.qrCode {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #f0f0f0;
+  border-radius: 12px;
+}
+
+.transactionInfo {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #888;
+}
+
+.paymentOffline {
+  text-align: center;
+  padding: 16px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.paymentOffline p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}

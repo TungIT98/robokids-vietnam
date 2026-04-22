@@ -1,0 +1,239 @@
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-15px); }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.celebrationHeader {
+  margin-bottom: 24px;
+}
+
+.celebrationEmoji {
+  font-size: 64px;
+  margin-bottom: 16px;
+  animation: bounce 1s ease infinite;
+}
+
+.celebrationTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.celebrationMessage {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.certificatePreview {
+  background-color: #fef9c3;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 2px dashed #f59e0b;
+}
+
+.certBadge {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.certName {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.certInfo {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 8px;
+}
+
+.certDate {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.verificationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #22c55e;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.verifyIcon {
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.primaryBtn {
+  padding: 14px 28px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.downloadedBtn {
+  background-color: #22c55e;
+}
+
+.shareSection {
+  margin-top: 8px;
+}
+
+.shareLabel {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.shareButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.shareBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.verifyLink {
+  background-color: transparent;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.continueBtn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loadingContainer {
+  text-align: center;
+}
+
+.loadingEmoji {
+  font-size: 64px;
+  animation: bounce 1s ease infinite;
+}
+
+.loadingText {
+  font-size: 18px;
+  color: white;
+  margin-top: 16px;
+}
+
+.errorContainer {
+  text-align: center;
+}
+
+.errorEmoji {
+  font-size: 64px;
+}
+
+.errorTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin: 16px 0 8px;
+}
+
+.errorText {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 24px;
+}
+
+.confettiContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confettiPiece {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  animation: confettiFall 3s ease-out forwards;
+}

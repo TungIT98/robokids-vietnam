@@ -1,0 +1,147 @@
+/* MobileNav.module.css */
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  color: #667eea;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.hamburger:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  z-index: 201;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobileMenuBrand {
+  font-size: 18px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #64748b;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.closeBtn:hover {
+  background-color: #f1f5f9;
+}
+
+.mobileNav {
+  flex: 1;
+  padding: 16px 0;
+  overflow-y: auto;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 14px 20px;
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.mobileNavLink:hover {
+  background-color: #f1f5f9;
+  color: #667eea;
+}
+
+.mobileMenuActions {
+  padding: 16px 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileLoginBtn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  color: #667eea;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.mobileLoginBtn:hover {
+  background-color: rgba(102, 126, 234, 0.05);
+}
+
+.mobileSignupBtn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  background-color: #667eea;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.mobileSignupBtn:hover {
+  background-color: #5a71d6;
+}
+
+/* Mobile breakpoint - show hamburger */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}

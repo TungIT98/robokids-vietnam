@@ -1,0 +1,256 @@
+.progressPage {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.loading, .error {
+  padding: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.error {
+  color: #dc2626;
+  background: #fef2f2;
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a5f7a;
+  margin: 0;
+}
+
+.filterBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 10px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.statCard {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.statIcon {
+  font-size: 36px;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a5f7a;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 16px;
+}
+
+.classProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.classCard {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.classHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.className {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a5f7a;
+}
+
+.classMeta {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.progressStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.progressStat {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.progressStatValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a5f7a;
+}
+
+.progressStatLabel {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.progressBar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #159895, #1a5f7a);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.studentList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.studentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+}
+
+.studentInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.studentName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.studentClass {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.studentProgress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.studentProgressBar {
+  width: 80px;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.studentProgressFill {
+  height: 100%;
+  background: #159895;
+  border-radius: 3px;
+}
+
+.studentProgressText {
+  font-size: 13px;
+  color: #6b7280;
+  min-width: 40px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 8px;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .progressStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="description" content="RoboKids Vietnam - STEM Robotics Education Platform for Vietnamese children ages 6-16. Learn programming robots with Blockly, AI tutor, and interactive 3D simulation." />
+    <meta name="keywords" content="STEM education, robotics, programming for kids, Blockly, Vietnam, học lập trình, robot cho trẻ em, RoboKids, Space Academy" />
+    <meta name="author" content="RoboKids Vietnam" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://robokids.vn/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font loading: use display=swap to prevent FOIT -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    </noscript>
+
+    <!-- Preload critical JS chunk for faster TTI -->
+    <link rel="modulepreload" href="data:application/octet-stream;base64,aW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gJ3JlYWN0JwppbXBvcnQgeyBjcmVhdGVSb290IH0gZnJvbSAncmVhY3QtZG9tL2NsaWVudCcKaW1wb3J0ICogYXMgU2VudHJ5IGZyb20gJ0BzZW50cnkvcmVhY3QnOwppbXBvcnQgJy4vaW5kZXguY3NzJwppbXBvcnQgQXBwIGZyb20gJy4vQXBwLnRzeCcKaW1wb3J0IHsgaW5pdFBvc3RIb2cgfSBmcm9tICcuL2xpYi9hbmFseXRpY3MnOwoKLy8gSW5pdGlhbGl6ZSBTZW50cnkgZm9yIGVycm9yIHRyYWNraW5nCi8vIFVzaW5nIHNhbXBsZSBEU04gZm9yIGRldmVsb3BtZW50IC0gcmVwbGFjZSB3aXRoIHJlYWwgU2VudHJ5IERTTiBpbiBwcm9kdWN0aW9uClNlbnRyeS5pbml0KHsKICBkc246IGltcG9ydC5tZXRhLmVudi5WSVRFX1NFTlRSWV9EU04gfHwgJ2h0dHBzOi8vZXhhbXBsZUBzZW50cnkuaW8vMDAwMDAwMCcsCiAgZW52aXJvbm1lbnQ6IGltcG9ydC5tZXRhLmVudi5NT0RFLAogIGludGVncmF0aW9uczogWwogICAgU2VudHJ5LmJyb3dzZXJUcmFjaW5nSW50ZWdyYXRpb24oKSwKICAgIFNlbnRyeS5yZXBsYXlJbnRlZ3JhdGlvbih7CiAgICAgIG1hc2tBbGxJbnB1dHM6IHRydWUsCiAgICB9KSwKICBdLAogIHRyYWNlc1NhbXBsZVJhdGU6IDAuMSwgLy8gMTAlIG9mIHRyYW5zYWN0aW9ucyBmb3IgcGVyZm9ybWFuY2UgbW9uaXRvcmluZwogIHJlcGxheXNTZXNzaW9uU2FtcGxlUmF0ZTogMC4wNSwgLy8gNSUgb2Ygc2Vzc2lvbnMgZm9yIHNlc3Npb24gcmVwbGF5CiAgcmVwbGF5c09uRXJyb3JTYW1wbGVSYXRlOiAxLjAsIC8vIDEwMCUgb2Ygc2Vzc2lvbnMgd2l0aCBlcnJvcnMKfSk7CgovLyBJbml0aWFsaXplIFBvc3RIb2cgZm9yIGJlaGF2aW9yYWwgYW5hbHl0aWNzCmluaXRQb3N0SG9nKCk7CgpjcmVhdGVSb290KGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykhKS5yZW5kZXIoCiAgPFN0cmljdE1vZGU+CiAgICA8QXBwIC8+CiAgPC9TdHJpY3RNb2RlPiwKKQo=" />
+
+    <!-- DNS prefetch for API -->
+    <link rel="dns-prefetch" href="//127.0.0.1" />
+
+    <title>RoboKids IDE - Lập trình Robot</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://robokids.vn/" />
+    <meta property="og:title" content="RoboKids Vietnam - STEM Robotics Education" />
+    <meta property="og:description" content="Học lập trình robot từ 6 tuổi với RoboKids. Nền tảng giáo dục STEM robotics kết hợp AI tutor thông minh." />
+    <meta property="og:image" content="https://robokids.vn/og-image.png" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="RoboKids Vietnam" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://robokids.vn/" />
+    <meta name="twitter:title" content="RoboKids Vietnam - STEM Robotics Education" />
+    <meta name="twitter:description" content="Học lập trình robot từ 6 tuổi với RoboKids. Nền tảng giáo dục STEM robotics kết hợp AI tutor thông minh." />
+    <meta name="twitter:image" content="https://robokids.vn/og-image.png" />
+
+    <!-- Hreflang for international pages -->
+    <link rel="alternate" hreflang="vi" href="https://robokids.vn/vi/" />
+    <link rel="alternate" hreflang="en" href="https://robokids.vn/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://robokids.vn/" />
+
+    <!-- Structured Data (JSON-LD) for Educational Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "RoboKids Vietnam",
+      "description": "STEM Robotics Education Platform for Vietnamese children ages 6-16",
+      "url": "https://robokids.vn",
+      "logo": "https://robokids.vn/logo.png",
+      "image": "https://robokids.vn/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "VN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["Vietnamese", "English"]
+      },
+      "sameAs": [
+        "https://facebook.com/robokidsvn",
+        "https://youtube.com/@robokidsvn"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Vietnam"
+      },
+      "targetEntity": {
+        "@type": "Audience",
+        "audienceType": "Children ages 6-16"
+      }
+    }
+    </script>
+
+    <style>
+      /* Critical CSS: prevent layout shift on load */
+      body {
+        margin: 0;
+        background-color: #0a0a1a;
+        color: #ffffff;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        /* Reserve space for loading states */
+        min-height: 100vh;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      /* Prevent CLS by reserving space for async content */
+      img, video, iframe {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CjjVLO5S.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-CFwzhqaj.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-chakra-BqZhcf43.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-three-DbIEL7kR.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-blockly-Bk7HwlIl.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-ui-DoHoQkmL.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CEdK8Akw.css">
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

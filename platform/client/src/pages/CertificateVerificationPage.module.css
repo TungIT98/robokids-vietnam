@@ -1,0 +1,168 @@
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.certificateBox {
+  background-color: #fef9c3;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 2px solid #f59e0b;
+}
+
+.badge {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.achievement {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 16px;
+}
+
+.certType {
+  display: inline-block;
+  padding: 4px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.date {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.verificationSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.verifiedBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #22c55e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.verifyIcon {
+  font-size: 16px;
+}
+
+.errorContainer {
+  text-align: center;
+}
+
+.errorEmoji {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.errorTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.errorText {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.loadingContainer {
+  text-align: center;
+}
+
+.loadingEmoji {
+  font-size: 64px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loadingText {
+  font-size: 18px;
+  color: #6b7280;
+  margin-top: 16px;
+}
+
+.footer {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footerText {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.robokidsLink {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}

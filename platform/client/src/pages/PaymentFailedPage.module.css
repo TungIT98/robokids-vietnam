@@ -1,0 +1,187 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  max-width: 480px;
+  width: 100%;
+  background-color: white;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 80px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 16px;
+}
+
+.message {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.errorBox {
+  background-color: #ffebee;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.errorCode {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.errorCodeValue {
+  font-size: 14px;
+  font-weight: bold;
+  color: #e74c3c;
+  font-family: monospace;
+}
+
+.transactionId {
+  font-size: 13px;
+  color: #666;
+  margin-top: 12px;
+}
+
+.transactionIdValue {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  font-family: monospace;
+}
+
+.reasonBox {
+  background-color: #fff3e0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.reasonTitle {
+  font-size: 15px;
+  font-weight: bold;
+  color: #e65100;
+  margin-bottom: 8px;
+}
+
+.reasonText {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.retryButton {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.retryButton:hover {
+  transform: scale(1.02);
+}
+
+.homeButton {
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.homeButton:hover {
+  background-color: #f5f5f5;
+}
+
+.contactButton {
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e74c3c;
+  background-color: white;
+  border: 2px solid #e74c3c;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.contactButton:hover {
+  background-color: #fff3f3;
+}
+
+.infoBox {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.infoTitle {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.infoText {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #888;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .icon {
+    font-size: 60px;
+  }
+}

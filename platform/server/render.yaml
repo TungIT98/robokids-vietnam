@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: robokids-api
+    env: docker
+    region: singapore # Hoặc frankfurt tuỳ vào ping
+    plan: free # Cấu hình Free Tier
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: MQTT_PORT
+        value: 1883
+      - key: JWT_SECRET
+        sync: false

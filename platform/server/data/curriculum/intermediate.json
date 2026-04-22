@@ -1,0 +1,12 @@
+{
+  "titleVi": "Lớp Trung Cấp",
+  "titleEn": "Intermediate Robotics",
+  "descriptionVi": "Khóa học robotics cho trẻ 9-12 tuổi, tập trung vào cảm biến, vòng lặp và điều kiện.",
+  "descriptionEn": "Intermediate robotics course for ages 9-12, focusing on sensors, loops, and conditions.",
+  "totalLessons": 25,
+  "totalHours": 50,
+  "minAge": 9,
+  "maxAge": 12,
+  "blocks": [],
+  "lessons": []
+}

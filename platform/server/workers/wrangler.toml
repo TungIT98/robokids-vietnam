@@ -1,0 +1,16 @@
+# Cloudflare Workers Configuration for RoboKids Auth API
+# Deploy with: wrangler deploy --config workers/wrangler.toml
+#
+# Secrets to set:
+#   wrangler secret put POCKETBASE_URL
+
+name = "robokids-api"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Note: Use workers.dev subdomain: https://robokids-api.workers.dev
+
+[vars]
+ENV = "production"
+POCKETBASE_URL = "https://robokids-pocketbase.fly.dev"
+ALLOWED_ORIGINS = "https://robokids.pages.dev,https://robokids.vn,https://www.robokids.vn"

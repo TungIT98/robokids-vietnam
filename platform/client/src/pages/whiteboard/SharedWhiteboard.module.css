@@ -1,0 +1,313 @@
+/* SharedWhiteboard.module.css - Collaborative whiteboard page styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f0f4ff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.backBtn {
+  background: #f8f9fa;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background: #e9ecef;
+}
+
+.sessionInfo h1 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.sessionName {
+  font-size: 14px;
+  color: #888;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.connectionStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #666;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.statusDot.connected {
+  background: #22c55e;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.shareBtn {
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.shareBtn:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+.collaboratorsBtn {
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.collaboratorsBtn:hover {
+  background: #e9ecef;
+}
+
+.collaboratorsBtn.active {
+  background: #e3f2fd;
+  color: #3b82f6;
+}
+
+/* Main Content */
+.mainContent {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.canvasArea {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Collaborators Panel */
+.collaboratorsPanel {
+  width: 280px;
+  background: white;
+  border-left: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.panelHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.count {
+  background: #667eea;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.collaboratorList {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.collaborator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.collaboratorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.collaboratorInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.collaboratorName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.collaboratorStatus {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Templates Section */
+.templatesSection {
+  padding: 16px 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.templatesSection h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.templateBtn {
+  padding: 12px 8px;
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.templateBtn:hover {
+  background: #e9ecef;
+  border-color: #667eea;
+}
+
+/* Footer */
+.footer {
+  padding: 12px 24px;
+  background: white;
+  border-top: 1px solid #e9ecef;
+}
+
+.hint {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  gap: 16px;
+}
+
+.loadingIcon {
+  font-size: 48px;
+}
+
+.loading button {
+  padding: 12px 24px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .headerLeft,
+  .headerRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .collaboratorsPanel {
+    width: 100%;
+    max-height: 200px;
+    border-left: none;
+    border-top: 1px solid #e9ecef;
+  }
+}

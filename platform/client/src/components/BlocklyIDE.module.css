@@ -1,0 +1,331 @@
+/* BlocklyIDE.module.css - Responsive styles for BlocklyIDE */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.workspace {
+  display: none;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background-color: #263238;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.runButton {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.runButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.navButton {
+  padding: 8px 14px;
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.navButton:hover {
+  background-color: rgba(255,255,255,0.25);
+}
+
+.statsDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 4px 12px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 8px;
+}
+
+.xpBadge {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.levelBadge {
+  font-size: 12px;
+  font-weight: bold;
+  color: #a78bfa;
+  background-color: rgba(167,139,250,0.2);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.xpMiniBar {
+  width: 60px;
+  height: 6px;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.xpMiniFill {
+  height: 100%;
+  background-color: #fbbf24;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.hintButton {
+  padding: 8px 16px;
+  background-color: #FF9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hintButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hintButton:hover:not(:disabled) {
+  background-color: #f57c00;
+}
+
+.difficultyIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.difficultyLabel {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.difficultyBadge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.difficultyBadge.easy {
+  background-color: rgba(76, 175, 80, 0.3);
+  color: #81c784;
+}
+
+.difficultyBadge.medium {
+  background-color: rgba(255, 152, 0, 0.3);
+  color: #ffb74d;
+}
+
+.difficultyBadge.hard {
+  background-color: rgba(244, 67, 54, 0.3);
+  color: #e57373;
+}
+
+.feedback {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.blocklyContainer {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.blockly {
+  width: 100%;
+  height: 100%;
+}
+
+.chatPanel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 320px;
+  height: 100vh;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  background: white;
+}
+
+/* Chat toggle button for tablet/mobile */
+.chatToggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 99;
+  transition: transform 0.2s;
+}
+
+.chatToggle:hover {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Tablet Responsive (up to 1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  /* Hide chat panel by default on tablet, show toggle button */
+  .chatPanel {
+    width: 300px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .chatPanel.open {
+    transform: translateX(0);
+  }
+
+  .chatToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toolbar {
+    gap: 8px;
+    padding: 6px 8px;
+  }
+
+  .navButton {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .runButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .statsDisplay {
+    padding: 4px 8px;
+  }
+
+  .xpBadge {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   Mobile Responsive (< 768px)
+   ======================================== */
+@media (max-width: 768px) {
+  .chatPanel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 200;
+  }
+
+  .chatPanel.open {
+    transform: translateX(0);
+  }
+
+  .chatToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toolbar {
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .toolbar > * {
+    flex-shrink: 0;
+  }
+
+  .navButton {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .navButton span {
+    display: none;
+  }
+
+  .runButton {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .statsDisplay {
+    margin-left: 4px;
+    padding: 2px 6px;
+  }
+
+  .xpBadge {
+    font-size: 11px;
+  }
+
+  .xpMiniBar {
+    display: none;
+  }
+
+  .feedback {
+    display: none;
+  }
+}
+
+/* ========================================
+   Large Desktop (> 1024px)
+   ======================================== */
+@media (min-width: 1025px) {
+  .chatPanel {
+    width: 360px;
+    transform: translateX(0);
+  }
+
+  .chatToggle {
+    display: none;
+  }
+}

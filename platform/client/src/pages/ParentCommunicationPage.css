@@ -1,0 +1,269 @@
+/* ParentCommunicationPage Styles */
+
+.pcp-container {
+  min-height: 100vh;
+  background: #1e1e2e;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Loading */
+.pcp-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #1e1e2e;
+  color: #6c7086;
+  gap: 16px;
+}
+
+.pcp-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #313244;
+  border-top-color: #89b4fa;
+  border-radius: 50%;
+  animation: pcp-spin 1s linear infinite;
+}
+
+@keyframes pcp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.pcp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pcp-header-left h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #cdd6f4;
+  margin: 0 0 8px;
+}
+
+.pcp-header-left p {
+  font-size: 14px;
+  color: #6c7086;
+  margin: 0;
+}
+
+/* Student Selector */
+.pcp-student-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pcp-student-selector label {
+  font-size: 14px;
+  color: #6c7086;
+}
+
+.pcp-select {
+  background: #181825;
+  border: 1px solid #313244;
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #cdd6f4;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.pcp-select:focus {
+  outline: none;
+  border-color: #89b4fa;
+}
+
+/* Tabs */
+.pcp-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #313244;
+  padding-bottom: 8px;
+}
+
+.pcp-tab {
+  background: transparent;
+  border: none;
+  color: #6c7086;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pcp-tab:hover {
+  background: #181825;
+  color: #cdd6f4;
+}
+
+.pcp-tab.pcp-tab-active {
+  background: #89b4fa;
+  color: #1e1e2e;
+}
+
+/* Content */
+.pcp-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.pcp-chat-section,
+.pcp-appointments-section,
+.pcp-alerts-section {
+  animation: pcp-fadeIn 0.3s ease;
+}
+
+@keyframes pcp-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pcp-section-header {
+  margin-bottom: 20px;
+}
+
+.pcp-section-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #cdd6f4;
+  margin: 0 0 8px;
+}
+
+.pcp-section-header p {
+  font-size: 14px;
+  color: #6c7086;
+  margin: 0;
+}
+
+/* Chat Wrapper */
+.pcp-chat-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pcp-chat-wrapper > * {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Appointments Wrapper */
+.pcp-appointments-wrapper {
+  background: #181825;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Alerts Wrapper */
+.pcp-alerts-wrapper {
+  background: #181825;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Quick Actions (FAB-style) */
+.pcp-quick-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.pcp-quick-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #181825;
+  border: 1px solid #313244;
+  padding: 12px 18px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pcp-quick-card:hover {
+  background: #313244;
+  transform: translateX(-4px);
+}
+
+.pcp-quick-icon {
+  font-size: 18px;
+}
+
+.pcp-quick-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cdd6f4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pcp-container {
+    padding: 16px;
+  }
+
+  .pcp-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pcp-header h1 {
+    font-size: 20px;
+  }
+
+  .pcp-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pcp-tab {
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .pcp-quick-actions {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .pcp-quick-card {
+    padding: 10px 14px;
+  }
+
+  .pcp-quick-label {
+    display: none;
+  }
+}

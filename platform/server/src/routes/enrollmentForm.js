@@ -1,0 +1,399 @@
+import express from 'express';
+import { supabaseAdmin } from '../lib/supabase.js';
+
+const router = express.Router();
+
+// Serve the public beta enrollment HTML form
+router.get('/', (req, res) => {
+  const html = `<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký Beta - RoboKids Vietnam</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+    .header h1 { font-size: 24px; margin-bottom: 8px; }
+    .header p { opacity: 0.9; font-size: 14px; }
+    .beta-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .benefits {
+      background: #fff9e6;
+      padding: 16px 20px;
+      border-bottom: 1px solid #ffeeba;
+    }
+    .benefits h3 { color: #856404; font-size: 14px; margin-bottom: 8px; }
+    .benefits ul { list-style: none; }
+    .benefits li { color: #856404; font-size: 13px; padding: 4px 0; }
+    .benefits li::before { content: "✓ "; margin-right: 6px; }
+    form { padding: 24px; }
+    .section { margin-bottom: 20px; }
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #667eea;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+      margin-bottom: 12px;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    .required { color: #ff6b6b; }
+    .consent-section {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .consent-label input { width: auto; margin: 0; margin-top: 3px; }
+    .consent-label span { font-size: 13px; color: #555; line-height: 1.4; }
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+    .submit-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .success-message h2 { color: #28a745; margin-bottom: 12px; }
+    .success-message p { color: #666; line-height: 1.6; }
+    .error-message {
+      display: none;
+      background: #ffe6e6;
+      color: #d63031;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    @media (max-width: 480px) {
+      .container { border-radius: 0; margin: -20px; }
+      .header { padding: 20px; }
+      .header h1 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="beta-badge">BETA PROGRAM</div>
+      <h1>Đăng ký RoboKids Vietnam</h1>
+      <p>Chương trình robotics STEM cho trẻ 6-16 tuổi</p>
+    </div>
+
+    <div class="benefits">
+      <h3>Quyền lợi Beta (20 slots)</h3>
+      <ul>
+        <li>Ưu đãi học phí 50% trong tháng đầu tiên</li>
+        <li>Thêm 1 buổi học miễn phí với robot thực tế</li>
+        <li>Gặp gỡ giáo viên 1-1 trước khi đăng ký chính thức</li>
+      </ul>
+    </div>
+
+    <div id="form-container">
+      <div id="error-message" class="error-message"></div>
+
+      <form id="enrollment-form">
+        <div class="section">
+          <div class="section-title">Thông tin phụ huynh</div>
+
+          <label for="parent_name">Họ tên phụ huynh <span class="required">*</span></label>
+          <input type="text" id="parent_name" name="parent_name" placeholder="Nhập họ tên đầy đủ" required>
+
+          <label for="phone">SĐT Zalo <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="09xxxxxxxx" required>
+
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="email@example.com" required>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Thông tin con</div>
+
+          <label for="child_name">Họ tên con <span class="required">*</span></label>
+          <input type="text" id="child_name" name="child_name" placeholder="Nhập họ tên con" required>
+
+          <label for="child_age">Tuổi <span class="required">*</span></label>
+          <select id="child_age" name="child_age" required>
+            <option value="">-- Chọn tuổi --</option>
+            <option value="6">6 tuổi</option>
+            <option value="7">7 tuổi</option>
+            <option value="8">8 tuổi</option>
+            <option value="9">9 tuổi</option>
+            <option value="10">10 tuổi</option>
+            <option value="11">11 tuổi</option>
+            <option value="12">12 tuổi</option>
+            <option value="13">13 tuổi</option>
+            <option value="14">14 tuổi</option>
+            <option value="15">15 tuổi</option>
+            <option value="16">16 tuổi</option>
+          </select>
+
+          <label for="class_schedule">Lớp học hiện tại</label>
+          <input type="text" id="class_schedule" name="class_schedule" placeholder="VD: Lớp 2, Trường Tiểu học ABC">
+        </div>
+
+        <div class="section">
+          <div class="section-title">Cam kết</div>
+          <div class="consent-section">
+            <label class="consent-label">
+              <input type="checkbox" id="consent_data_processing" name="consent_data_processing" required>
+              <span>Tôi đồng ý cho RoboKids xử lý dữ liệu để tư vấn khóa học robotics cho con tôi. <span class="required">*</span></span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">Đăng ký ngay</button>
+      </form>
+    </div>
+
+    <div id="success-message" class="success-message">
+      <h2>Đăng ký thành công!</h2>
+      <p>Cảm ơn bạn đã đăng ký chương trình Beta của RoboKids Vietnam.<br><br>
+      Chúng tôi sẽ liên hệ qua Zalo trong vòng <strong>24 giờ</strong> để tư vấn chi tiết về khóa học robotics phù hợp cho con bạn.</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('enrollment-form');
+    const errorMsg = document.getElementById('error-message');
+    const successMsg = document.getElementById('success-message');
+    const formContainer = document.getElementById('form-container');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+
+      const formData = new FormData(form);
+      const data = {
+        parent_name: formData.get('parent_name'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        child_name: formData.get('child_name'),
+        child_age: parseInt(formData.get('child_age')),
+        class_schedule: formData.get('class_schedule') || '',
+        consent_data_processing: formData.get('consent_data_processing') === 'on',
+        consent_marketing: false
+      };
+
+      // Validate
+      if (!data.parent_name || !data.phone || !data.email || !data.child_name || !data.child_age || !data.consent_data_processing) {
+        errorMsg.textContent = 'Vui lòng điền đầy đủ các trường bắt buộc.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      // Phone validation (9-11 digits)
+      const phoneDigits = data.phone.replace(/\\s/g, '');
+      if (!/^[0-9]{9,11}$/.test(phoneDigits)) {
+        errorMsg.textContent = 'Số điện thoại phải có 9-11 chữ số.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      if (!emailRegex.test(data.email)) {
+        errorMsg.textContent = 'Email không hợp lệ.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Đang xử lý...';
+
+      try {
+        const response = await fetch('/api/public/enrollments', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Đã xảy ra lỗi');
+        }
+
+        formContainer.style.display = 'none';
+        successMsg.style.display = 'block';
+      } catch (err) {
+        errorMsg.textContent = err.message || 'Đã xảy ra lỗi. Vui lòng thử lại.';
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Đăng ký ngay';
+      }
+    });
+  </script>
+</body>
+</html>`;
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
+});
+
+/**
+ * POST /api/public/enrollments
+ * Create a new public enrollment (no auth required)
+ */
+router.post('/', async (req, res) => {
+  try {
+    const {
+      parent_name,
+      email,
+      phone,
+      child_name,
+      child_age,
+      class_schedule,
+      consent_data_processing,
+      consent_marketing,
+    } = req.body;
+
+    // Validate required fields
+    if (!parent_name || !email || !phone || !child_name || !child_age) {
+      return res.status(400).json({
+        error: 'Missing required fields: parent_name, email, phone, child_name, child_age',
+      });
+    }
+
+    if (!consent_data_processing) {
+      return res.status(400).json({
+        error: 'Consent to data processing is required',
+      });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    // Validate phone (9-11 digits)
+    const phoneDigits = phone.replace(/\s/g, '');
+    if (!/^[0-9]{9,11}$/.test(phoneDigits)) {
+      return res.status(400).json({ error: 'Invalid phone number (9-11 digits required)' });
+    }
+
+    // Validate child age (6-16)
+    const age = parseInt(child_age);
+    if (isNaN(age) || age < 6 || age > 16) {
+      return res.status(400).json({ error: 'Child age must be between 6 and 16' });
+    }
+
+    // Check if enrollment already exists for this email
+    const { data: existing } = await supabaseAdmin
+      .from('enrollments')
+      .select('id')
+      .eq('email', email.toLowerCase())
+      .eq('status', 'pending')
+      .single();
+
+    if (existing) {
+      return res.status(409).json({
+        error: 'An enrollment with this email already exists. We will contact you shortly.',
+      });
+    }
+
+    // Create enrollment record
+    const { data: enrollment, error: enrollmentError } = await supabaseAdmin
+      .from('enrollments')
+      .insert({
+        parent_name: parent_name.trim(),
+        email: email.toLowerCase().trim(),
+        phone: phoneDigits,
+        child_name: child_name.trim(),
+        child_age: age,
+        class_schedule: class_schedule || '',
+        consent_data_processing,
+        consent_marketing: consent_marketing || false,
+        status: 'pending',
+      })
+      .select()
+      .single();
+
+    if (enrollmentError) {
+      console.error('Public enrollment creation error:', enrollmentError);
+      return res.status(500).json({ error: 'Failed to create enrollment record' });
+    }
+
+    res.status(201).json({
+      success: true,
+      enrollment_id: enrollment.id,
+      message: 'Enrollment created successfully.',
+    });
+  } catch (err) {
+    console.error('Public enrollment error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+export default router;

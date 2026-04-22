@@ -1,0 +1,12 @@
+{
+  "titleVi": "Lớp Nâng Cao",
+  "titleEn": "Advanced Robotics",
+  "descriptionVi": "Khóa học robotics cho trẻ 13-16 tuổi, tập trung vào biến, hàm và dự án phức tạp.",
+  "descriptionEn": "Advanced robotics course for ages 13-16, focusing on variables, functions, and complex projects.",
+  "totalLessons": 30,
+  "totalHours": 60,
+  "minAge": 13,
+  "maxAge": 16,
+  "blocks": [],
+  "lessons": []
+}
